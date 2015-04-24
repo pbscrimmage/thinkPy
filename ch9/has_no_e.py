@@ -32,3 +32,4 @@ def has_no_e(wf):
     print "Percentage of words without 'e': " + str(results / float(count) * 100)
 
 has_no_e(word_file)
+word_file.close()
