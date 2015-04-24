@@ -16,16 +16,18 @@ word_file = open(sys.argv[1])
 
 letters = sys.argv[2]
 
-def uses_only(wf, lttrs):
+def uses_only(word, lttrs):
+    for ch in word:
+        if ch not in lttrs:
+            return False
+    return True
+
+
+def uses_only_filter(wf, lttrs):
     for line in wf:
-        only = True
         word = line.strip()
-
-        for ch in word:
-            if ch not in lttrs:
-                only = False
-
-        if only:
+        
+        if uses_only(word, lttrs):
             print word
 
 uses_only(word_file, letters)

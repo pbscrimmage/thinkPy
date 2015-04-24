@@ -8,6 +8,7 @@ Objective:
     Create a program that reads through a word list and prints out
     all words which contain all letters in given string. The word file
     and the 'required' string are given as commandline arguments.
+        only = True
 '''
 import sys
 
@@ -21,7 +22,8 @@ def uses_all(word, req):
             return False
     return True
 
-def use_all_filter(wf, req):
+
+def uses_all_filter(wf, req):
     for line in wf:
         word = line.strip()
         if uses_all(word, req):
